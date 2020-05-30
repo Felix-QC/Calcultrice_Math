@@ -44,7 +44,7 @@ def main():
             print("\nOption pas encore disponible\n")
             time.sleep(5.5) 
             continue
-        ordre_grandeur_input = str(input("\nEntrer l'unite de mesure ex:(cm, mm, m) : \n"))
+        ordre_grandeur_input = str(input("\nEntrer l'unite de mesure ex:(mm, cm, m) : \n"))
         try:
             int(ordre_grandeur_input)
             print("\nErreur : Vous devez entrer une unitee de mesure valide.\n")
