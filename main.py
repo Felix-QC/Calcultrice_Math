@@ -1,16 +1,21 @@
+#coding utf-8
 #librarys
 import os
 import math
-
+import time
 # Function
 cls = lambda: print('\n' * 100)
+clr = lambda: print('\n' * 22)
+user_input = int
+ordre_grandeur_input = str
 def main():
     count = 0
     while True:
         count += 1
         if count > 1:
             cls()
-        print("""
+        try:
+            print("""
 #######################################################
 ##             Calculateur informatique              ##
 ##  1. Calculer l'aire d'un triangle                 ##
@@ -18,14 +23,27 @@ def main():
 ##  3. Calculer l'aire d'un disque                   ##
 ##  4. Calculer le volume d'un cube                  ##
 ##  5. Calculer le volume d'un solide triangulaire   ##
+#######################################################
 ##  6. Quitter le programme                          ##
 #######################################################""")
-        user_input = int(input("\nEntrer le numero associer a l'option : \n"))
+            user_input = int(input("\nEntrer le numero associer a l'option : \n"))
+        except ValueError:
+            clr()
+            print("Erreur : Vous devez entrer un nombre entier.")
+            time.sleep(2.45)
+            continue
         if user_input == 6:
-            cls()
+            clr()
             print("Merci de m'avoir utiliser !")
             break
         ordre_grandeur_input = str(input("\nEntrer l'unite de mesure ex:(cm, mm, m) : \n"))
+        try:
+            int(ordre_grandeur_input)
+            print("Erreur : Vous devez entrer une unitee de mesure valide.")
+            time.sleep(2.65)
+            continue  
+        except:
+            pass           
         if user_input == 1:
             base_input = int(input("\nQuels est la grandeur de sa Base ? : \n"))
             hauteur_input = int(input("\nQuels est sa Hauteur ? : \n"))
