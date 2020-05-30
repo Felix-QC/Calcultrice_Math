@@ -113,20 +113,52 @@ def main():
 ##  1. Pyramide                            ##
 ##  2. Cone                                ## 
 #############################################""")
-            arret_input = int(input("\nQuels est le type de la base ? (1 ou 2): \n"))
+            try:
+                arret_input = int(input("\nQuels est le type de la base ? (1 ou 2): \n"))
+            except ValueError:
+                print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                time.sleep(2.45) 
+                continue    
             if arret_input == 1:
-                base_input = int(input("\nQuels est la grandeur de la Base (1 face seulement) ? : \n"))
-                hauteur_input = int(input("\nQuels est la Hauteur (1 face seulement) ? : \n"))
+                try:
+                    base_input = int(input("\nQuels est la grandeur de la Base (1 face seulement) ? : \n"))
+                except ValueError:
+                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    time.sleep(2.45) 
+                    continue  
+                try:  
+                    hauteur_input = int(input("\nQuels est la Hauteur (1 face seulement) ? : \n"))
+                except ValueError:
+                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    time.sleep(2.45) 
+                    continue 
                 resultat = (base_input * hauteur_input) / 2
-                hauteur_2_input = int(input("Quels est la Hauteur de la pyramide ? : \n"))
+                try:
+                    hauteur_2_input = int(input("Quels est la Hauteur de la pyramide ? : \n"))
+                except ValueError:
+                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    time.sleep(2.45) 
+                    continue 
                 print("\nLa reponse est :", ((resultat * hauteur_2_input) / 3), f"{ordre_grandeur_input.lower()}³")
+                time.sleep(5.5) 
+                continue
             else:
-                rayon_input = int(input("\nQuels est la grandeur du Rayon de la base ? : \n"))
-                float(rayon_input)
+                try:
+                    rayon_input = int(input("\nQuels est la grandeur du Rayon de la base ? : \n"))
+                except ValueError:
+                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    time.sleep(2.45) 
+                    continue    
                 resultat = math.pi * (rayon_input * rayon_input)
-                hauteur_2_input = int(input("\nQuels est la Hauteur du cone ? : \n"))
+                try:
+                    hauteur_2_input = int(input("\nQuels est la Hauteur du cone ? : \n"))
+                except ValueError:
+                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    time.sleep(2.45) 
+                    continue 
                 print("\nLa reponse est :", ((resultat * hauteur_2_input) / 3), f"{ordre_grandeur_input.lower()}³")
-
+                time.sleep(5.5) 
+                continue
 
 if __name__ == "__main__":
     main()
@@ -139,5 +171,9 @@ if __name__ == "__main__":
         - Some optimisations
         - Add more options
         - Add english langage
+    """
+    """[Things did]
+        - Patch bugs [2020-05-30]
+        - Add more options [2020-05-30]
     """
 ###########################################
