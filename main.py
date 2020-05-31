@@ -41,11 +41,7 @@ def main():
             print("\nErreur : Option non valide\n")
             time.sleep(2.45)
             continue
-        if user_input == 7: # Will be there later
-            print("\nOption pas encore disponible\n")
-            time.sleep(5.5) 
-            continue
-        ordre_grandeur_input = str(input("\nEntrer l'unite de mesure ex:(cm, mm, m) : \n"))
+        ordre_grandeur_input = str(input("\nEntrer l'unite de mesure ex:(mm, cm, m) : \n"))
         try:
             int(ordre_grandeur_input)
             print("\nErreur : Vous devez entrer une unitee de mesure valide.\n")
@@ -66,7 +62,7 @@ def main():
                 print("\n\nErreur : Vous devez entrer un nombre entier.\n")
                 time.sleep(2.45) 
                 continue
-            print("\nLa reponse est :", (base_input * hauteur_input) / 2, ordre_grandeur_input.lower())
+            print("\nLa reponse est :", round(((base_input * hauteur_input) / 2), 3), ordre_grandeur_input.lower())
             time.sleep(5.5) 
             continue
         if user_input == 2:
@@ -82,7 +78,7 @@ def main():
                 print("\n\nErreur : Vous devez entrer un nombre entier.\n")
                 time.sleep(2.45) 
                 continue
-            print("\nLa reponse est :", (base_input * hauteur_input), ordre_grandeur_input.lower())
+            print("\nLa reponse est :", round((base_input * hauteur_input), 3), ordre_grandeur_input.lower())
             time.sleep(5.5) 
             continue
         if user_input == 3:
@@ -92,7 +88,7 @@ def main():
                 print("\n\nErreur : Vous devez entrer un nombre entier.\n")
                 time.sleep(2.45) 
                 continue
-            print("\nLa reponse est :", (math.pi * (rayon_input * rayon_input)), ordre_grandeur_input.lower())
+            print("\nLa reponse est :", round((math.pi * (rayon_input * rayon_input)), 3), ordre_grandeur_input.lower())
             time.sleep(5.5) 
             continue
         if user_input == 4:
@@ -102,7 +98,7 @@ def main():
                 print("\n\nErreur : Vous devez entrer un nombre entier.\n")
                 time.sleep(2.45) 
                 continue
-            print("\nLa reponse est :", ((arret_input * arret_input) * 6), f"{ordre_grandeur_input.lower()}²")
+            print("\nLa reponse est :", round(((arret_input * arret_input) * 6), 3), f"{ordre_grandeur_input.lower()}²")
             time.sleep(5.5) 
             continue
         if user_input == 5:
@@ -119,6 +115,10 @@ def main():
                 print("\n\nErreur : Vous devez entrer un nombre entier.\n")
                 time.sleep(2.45) 
                 continue    
+            if arret_input > 2:
+                print("\n\nErreur : Option non valide\n")
+                time.sleep(3.5) 
+                continue
             if arret_input == 1:
                 try:
                     base_input = int(input("\nQuels est la grandeur de la Base (1 face seulement) ? : \n"))
@@ -139,7 +139,7 @@ def main():
                     print("\n\nErreur : Vous devez entrer un nombre entier.\n")
                     time.sleep(2.45) 
                     continue 
-                print("\nLa reponse est :", ((resultat * hauteur_2_input) / 3), f"{ordre_grandeur_input.lower()}³")
+                print("\nLa reponse est :", round(((resultat * hauteur_2_input) / 3), 3), f"{ordre_grandeur_input.lower()}³")
                 time.sleep(5.5) 
                 continue
             else:
@@ -156,7 +156,7 @@ def main():
                     print("\n\nErreur : Vous devez entrer un nombre entier.\n")
                     time.sleep(2.45) 
                     continue 
-                print("\nLa reponse est :", ((resultat * hauteur_2_input) / 3), f"{ordre_grandeur_input.lower()}³")
+                print("\nLa reponse est :", round(((resultat * hauteur_2_input) / 3), 3), f"{ordre_grandeur_input.lower()}³")
                 time.sleep(5.5) 
                 continue
         if user_input == 6:
@@ -175,9 +175,83 @@ def main():
                 continue
             resultat_hauteur = resultat * hauteur_input
             resultat_last = resultat_hauteur + ((resultat)* 2)
-            print("\nLa reponse est :", (resultat_last * math.pi), f"{ordre_grandeur_input.lower()}³")
+            print("\nLa reponse est :", round((resultat_last * math.pi), 3), f"{ordre_grandeur_input.lower()}³")
             time.sleep(5.5) 
             continue
+        if user_input == 7: # Will be there later
+            cls()
+            print("""
+#############################################
+##        Type de solide triangulaire      ##
+##  1. Prisme Triangulaire                 ##
+##  2. Prisme Rectangulaire                ## 
+##  3. Prisme Pentagonal                   ## 
+#############################################""")
+            try:
+                prisme_input = int(input("\nQuels est le type de prisme ? (1 a 3): \n"))
+            except ValueError:
+                print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                time.sleep(2.45) 
+                continue    
+            if prisme_input > 3:
+                print("\n\nErreur : Option non valide\n")
+                time.sleep(3.5)  
+                continue
+            if prisme_input == 1:
+                try:
+                    base_input = int(input("\nQuels est la grandeur de l'air de la Base ? : \n"))
+                except ValueError:
+                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    time.sleep(2.45) 
+                    continue  
+                try:
+                    hauteur_input = int(input("\nQuels est la longeur du Prisme ? : \n"))
+                except ValueError:
+                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    time.sleep(2.45) 
+                    continue
+                print("\nLa reponse est :", round((base_input * hauteur_input), 3), f"{ordre_grandeur_input.lower()}³")
+                time.sleep(5.5) 
+                continue
+            if prisme_input == 2:
+                try:
+                    base_input = int(input("\nQuels est la grandeur de l'air de la Base ? : \n"))
+                except ValueError:
+                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    time.sleep(2.45) 
+                    continue  
+                try:
+                    hauteur_input = int(input("\nQuels est la hauteur du Prisme ? : \n"))
+                except ValueError:
+                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    time.sleep(2.45) 
+                    continue
+                print("\nLa reponse est :", round((base_input * hauteur_input), 3), f"{ordre_grandeur_input.lower()}³")
+                time.sleep(5.5) 
+                continue
+            if prisme_input == 3:
+                try:
+                    apoteme_input = int(input("\nQuels est la grandeur de l'apoteme ? : \n"))
+                except ValueError:
+                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    time.sleep(2.45) 
+                    continue  
+                try:
+                    segment_input = int(input("\nQuels est la grandeur d'un segmant ? : \n"))
+                except ValueError:
+                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    time.sleep(2.45) 
+                    continue  
+                resultat_apoteme = 0.5 * ((5 * segment_input) * apoteme_input)           
+                try:
+                    hauteur_input = int(input("\nQuels est la hauteur du Prisme ? : \n"))
+                except ValueError:
+                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    time.sleep(2.45) 
+                    continue
+                print("\nLa reponse est :", round((resultat_apoteme * hauteur_input), 3), f"{ordre_grandeur_input.lower()}³")
+                time.sleep(5.5) 
+                continue
 
 if __name__ == "__main__":
     main()
@@ -192,7 +266,7 @@ if __name__ == "__main__":
         - Add english langage
     """
     """[Things did]
-        - Patch bugs [2020-05-30]
-        - Add more options [2020-05-30]
+        - Patch bugs [2020-05-30] - [2020-05-31]
+        - Add more options [2020-05-30] - [2020-05-31]
     """
 ###########################################
