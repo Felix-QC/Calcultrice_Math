@@ -177,7 +177,7 @@ def main():
             print("\nLa reponse est :", round((resultat_last * math.pi), 3), f"{ordre_grandeur_input.lower()}³")
             time.sleep(5.5) 
             continue
-        if user_input == 7: # Will be there later
+        if user_input == 7:
             cls()
             print("""
 #############################################
