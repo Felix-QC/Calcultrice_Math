@@ -4,7 +4,6 @@ import math
 import time
 # Function
 cls = lambda: print('\n' * 100)
-clr = lambda: print('\n' * 22)
 user_input = int
 ordre_grandeur_input = str
 def main():
@@ -29,12 +28,12 @@ def main():
 #######################################################""")
             user_input = int(input("\nEntrer le numero associer a l'option : \n"))
         except ValueError:
-            clr()
+            cls()
             print("\nErreur : Vous devez entrer un nombre entier.\n")
             time.sleep(2.45)
             continue
         if user_input == 8:
-            clr()
+            cls()
             print("Merci de m'avoir utiliser !")
             break
         if user_input >= 9:
