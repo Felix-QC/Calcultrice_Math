@@ -1,7 +1,7 @@
 #coding utf-8
 #librarys
-from math import pi
-from time import sleep
+import math
+import time
 # Function
 cls = lambda: print('\n' * 100)
 def main():
@@ -12,6 +12,8 @@ def main():
             cls()
         try:
             print("""
+#######################################################
+##                Made by Felix-QC                   ##
 #######################################################
 ##             Calculateur informatique              ##
 ##  1. Calculer l'aire d'un triangle                 ##
