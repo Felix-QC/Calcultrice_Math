@@ -1,11 +1,9 @@
 #coding utf-8
 #librarys
-import math
-import time
+from math import pi
+from time import sleep
 # Function
 cls = lambda: print('\n' * 100)
-user_input = int
-ordre_grandeur_input = str
 def main():
     count = 0
     while True:
@@ -50,15 +48,17 @@ def main():
             pass
         if user_input == 1:
             try:
-                base_input = int(input("\nQuels est la grandeur de sa Base ? : \n"))
+                base_input = input("\nQuels est la grandeur de sa Base ? : \n")
+                base_input = float(base_input)
             except ValueError:
-                print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                print("\n\nErreur : Vous devez entrer un nombre.\n")
                 time.sleep(2.45)
                 continue
             try:
-                hauteur_input = int(input("\nQuels est sa Hauteur ? : \n"))
+                hauteur_input = input("\nQuels est sa Hauteur ? : \n")
+                hauteur_input = float(hauteur_input)
             except ValueError:
-                print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                print("\n\nErreur : Vous devez entrer un nombre.\n")
                 time.sleep(2.45) 
                 continue
             print("\nLa reponse est :", round(((base_input * hauteur_input) / 2), 3), ordre_grandeur_input.lower())
@@ -66,15 +66,17 @@ def main():
             continue
         if user_input == 2:
             try:   
-                base_input = int(input("\nQuels est la grandeur de sa Base ? : \n"))
+                base_input = input("\nQuels est la grandeur de sa Base ? : \n")
+                base_input = float(base_input)
             except ValueError:
-                print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                print("\n\nErreur : Vous devez entrer un nombre.\n")
                 time.sleep(2.45) 
                 continue
             try:   
-                hauteur_input = int(input("\nQuels est sa Hauteur ? : \n"))
+                hauteur_input = input("\nQuels est sa Hauteur ? : \n")
+                hauteur_input = float(hauteur_input)            
             except ValueError:
-                print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                print("\n\nErreur : Vous devez entrer un nombre.\n")
                 time.sleep(2.45) 
                 continue
             print("\nLa reponse est :", round((base_input * hauteur_input), 3), ordre_grandeur_input.lower())
@@ -82,9 +84,10 @@ def main():
             continue
         if user_input == 3:
             try:
-                rayon_input = int(input("\nQuels est la grandeur du Rayon ? : \n"))
+                rayon_input = input("\nQuels est la grandeur du Rayon ? : \n")
+                rayon_input = float(rayon_input)
             except ValueError:
-                print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                print("\n\nErreur : Vous devez entrer un nombre.\n")
                 time.sleep(2.45) 
                 continue
             print("\nLa reponse est :", round((math.pi * (rayon_input * rayon_input)), 3), ordre_grandeur_input.lower())
@@ -92,9 +95,10 @@ def main():
             continue
         if user_input == 4:
             try:
-                arret_input = int(input("\nQuels est la grandeur d'une arret ? : \n"))
+                arret_input = input("\nQuels est la grandeur d'une arret ? : \n")
+                arret_input = float(arret_input)
             except ValueError:
-                print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                print("\n\nErreur : Vous devez entrer un nombre.\n")
                 time.sleep(2.45) 
                 continue
             print("\nLa reponse est :", round(((arret_input * arret_input) * 6), 3), f"{ordre_grandeur_input.lower()}²")
@@ -111,7 +115,7 @@ def main():
             try:
                 arret_input = int(input("\nQuels est le type de la base ? (1 ou 2): \n"))
             except ValueError:
-                print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                print("\n\nErreur : Vous devez entrer un nombre.\n")
                 time.sleep(2.45) 
                 continue    
             if arret_input > 2:
@@ -120,22 +124,25 @@ def main():
                 continue
             if arret_input == 1:
                 try:
-                    base_input = int(input("\nQuels est la grandeur de la Base (1 face seulement) ? : \n"))
+                    base_input = input("\nQuels est la grandeur de la Base (1 face seulement) ? : \n")
+                    base_input = float(base_input)
                 except ValueError:
-                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    print("\n\nErreur : Vous devez entrer un nombre.\n")
                     time.sleep(2.45) 
                     continue  
                 try:  
-                    hauteur_input = int(input("\nQuels est la Hauteur (1 face seulement) ? : \n"))
+                    hauteur_input = input("\nQuels est la Hauteur (1 face seulement) ? : \n")
+                    hauteur_input = float(hauteur_input)
                 except ValueError:
-                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    print("\n\nErreur : Vous devez entrer un nombre.\n")
                     time.sleep(2.45) 
                     continue 
                 resultat = (base_input * hauteur_input) / 2
                 try:
-                    hauteur_2_input = int(input("Quels est la Hauteur de la pyramide ? : \n"))
+                    hauteur_2_input = input("Quels est la Hauteur de la pyramide ? : \n")
+                    hauteur_2_input = float(hauteur_2_input)
                 except ValueError:
-                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    print("\n\nErreur : Vous devez entrer un nombre.\n")
                     time.sleep(2.45) 
                     continue 
                 print("\nLa reponse est :", round(((resultat * hauteur_2_input) / 3), 3), f"{ordre_grandeur_input.lower()}³")
@@ -143,16 +150,18 @@ def main():
                 continue
             else:
                 try:
-                    rayon_input = int(input("\nQuels est la grandeur du Rayon de la base ? : \n"))
+                    rayon_input = input("\nQuels est la grandeur du Rayon de la base ? : \n")
+                    rayon_input = float(rayon_input)
                 except ValueError:
-                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    print("\n\nErreur : Vous devez entrer un nombre.\n")
                     time.sleep(2.45) 
                     continue    
                 resultat = math.pi * (rayon_input * rayon_input)
                 try:
-                    hauteur_2_input = int(input("\nQuels est la Hauteur du cone ? : \n"))
+                    hauteur_2_input = input("\nQuels est la Hauteur du cone ? : \n")
+                    hauteur_2_input = float(hauteur_2_input)
                 except ValueError:
-                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    print("\n\nErreur : Vous devez entrer un nombre.\n")
                     time.sleep(2.45) 
                     continue 
                 print("\nLa reponse est :", round(((resultat * hauteur_2_input) / 3), 3), f"{ordre_grandeur_input.lower()}³")
@@ -160,16 +169,18 @@ def main():
                 continue
         if user_input == 6:
             try:                       
-                rayon_input = int(input("\nQuels est la grandeur du Rayon d'une base ? : \n"))
+                rayon_input = input("\nQuels est la grandeur du Rayon d'une base ? : \n")
+                rayon_input = float(rayon_input)
             except ValueError:
-                print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                print("\n\nErreur : Vous devez entrer un nombre.\n")
                 time.sleep(2.45) 
                 continue             
             resultat = (rayon_input * rayon_input)
             try:
                 hauteur_input = int(input("\nQuels est sa Hauteur ? : \n"))
+                hauteur_input = float(hauteur_input)
             except ValueError:
-                print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                print("\n\nErreur : Vous devez entrer un nombre.\n")
                 time.sleep(2.45) 
                 continue
             resultat_hauteur = resultat * hauteur_input
@@ -189,7 +200,7 @@ def main():
             try:
                 prisme_input = int(input("\nQuels est le type de prisme ? (1 a 3): \n"))
             except ValueError:
-                print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                print("\n\nErreur : Vous devez entrer un nombre.\n")
                 time.sleep(2.45) 
                 continue    
             if prisme_input > 3:
@@ -198,15 +209,17 @@ def main():
                 continue
             if prisme_input == 1:
                 try:
-                    base_input = int(input("\nQuels est la grandeur de l'air de la Base ? : \n"))
+                    base_input = input("\nQuels est la grandeur de l'air de la Base ? : \n")
+                    base_input = float(base_input)
                 except ValueError:
-                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    print("\n\nErreur : Vous devez entrer un nombre.\n")
                     time.sleep(2.45) 
                     continue  
                 try:
-                    hauteur_input = int(input("\nQuels est la longeur du Prisme ? : \n"))
+                    hauteur_input = input("\nQuels est la longeur du Prisme ? : \n")
+                    hauteur_input = float(hauteur_input)
                 except ValueError:
-                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    print("\n\nErreur : Vous devez entrer un nombre.\n")
                     time.sleep(2.45) 
                     continue
                 print("\nLa reponse est :", round((base_input * hauteur_input), 3), f"{ordre_grandeur_input.lower()}³")
@@ -214,15 +227,17 @@ def main():
                 continue
             if prisme_input == 2:
                 try:
-                    base_input = int(input("\nQuels est la grandeur de l'air de la Base ? : \n"))
+                    base_input = input("\nQuels est la grandeur de l'air de la Base ? : \n")
+                    base_input = float(base_input)
                 except ValueError:
-                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    print("\n\nErreur : Vous devez entrer un nombre.\n")
                     time.sleep(2.45) 
                     continue  
                 try:
-                    hauteur_input = int(input("\nQuels est la hauteur du Prisme ? : \n"))
+                    hauteur_input = input("\nQuels est la hauteur du Prisme ? : \n")
+                    hauteur_input = float(hauteur_input)
                 except ValueError:
-                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    print("\n\nErreur : Vous devez entrer un nombre.\n")
                     time.sleep(2.45) 
                     continue
                 print("\nLa reponse est :", round((base_input * hauteur_input), 3), f"{ordre_grandeur_input.lower()}³")
@@ -230,22 +245,25 @@ def main():
                 continue
             if prisme_input == 3:
                 try:
-                    apoteme_input = int(input("\nQuels est la grandeur de l'apoteme ? : \n"))
+                    apoteme_input = input("\nQuels est la grandeur de l'apoteme ? : \n")
+                    apoteme_input = float(apoteme_input)
                 except ValueError:
-                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    print("\n\nErreur : Vous devez entrer un nombre.\n")
                     time.sleep(2.45) 
                     continue  
                 try:
                     segment_input = int(input("\nQuels est la grandeur d'un segmant ? : \n"))
+                    segment_input = float(segment_input)
                 except ValueError:
-                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    print("\n\nErreur : Vous devez entrer un nombre.\n")
                     time.sleep(2.45) 
                     continue  
                 resultat_apoteme = 0.5 * ((5 * segment_input) * apoteme_input)           
                 try:
-                    hauteur_input = int(input("\nQuels est la hauteur du Prisme ? : \n"))
+                    hauteur_input = input("\nQuels est la hauteur du Prisme ? : \n")
+                    hauteur_input = float(hauteur_input)
                 except ValueError:
-                    print("\n\nErreur : Vous devez entrer un nombre entier.\n")
+                    print("\n\nErreur : Vous devez entrer un nombre.\n")
                     time.sleep(2.45) 
                     continue
                 print("\nLa reponse est :", round((resultat_apoteme * hauteur_input), 3), f"{ordre_grandeur_input.lower()}³")
@@ -265,7 +283,8 @@ if __name__ == "__main__":
         - Add english langage
     """
     """[Things did]
-        - Patch bugs [2020-05-30] - [2020-05-31]
-        - Add more options [2020-05-30] - [2020-05-31]
+        - Patch bugs [2020-05-30] - [2020-05-31] - [2020-06-01]
+        - Add more options [2020-05-30] - [2020-05-31] - [2020-06-01]
+        - Some optimisations [2020-06-01]
     """
 ###########################################
